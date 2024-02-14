@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero"> 
+        <div class="container">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="secs">00</span>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let hrs = document.getElementById('hrs');
+        let min = document.getElementById('min');
+        let secs = document.getElementById('secs');
+
+        setInterval(()=>{
+            let currentTime = new Date();
+
+            // IF WE HAD SECOND LIKE 6 7 8 SO IF WE WANT TO ADD ZERO LIKE 06, 07, 08 SO FUNC IS.
+
+        hrs.innerHTML = (currentTime.getHours()<10?"0":"")+ currentTime.getHours();
+        min.innerHTML = (currentTime.getMinutes()<10?"0":"")+ currentTime.getMinutes();
+        secs.innerHTML = (currentTime.getSeconds()<10?"0":"")+ currentTime.getSeconds();
+
+        changeColor(hrs, '#003366');
+        changeColor(min, '#006633');
+        changeColor(secs, '#cc6600');
+
+        },1000)
+
+
+        function changeColor(element, color) {
+        element.style.color = color;
+    }
+
+        
+
+        // 1000 MEANS 1 SECOND AFTER 1 SECOND IT WILL CHANGE
+
+       
+
+        // IF WE WANT TO UPDATE IT AT EVERY SECONDS WE WILL USE SET INTERVAL
+
+
+
+        
+
+
+        
+
+    </script>
+    
+</body>
+</html>
